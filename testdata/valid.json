@@ -1,0 +1,46 @@
+{
+  "active": true,
+  "amr": [
+    "pwd"
+  ],
+  "aud": [
+    "283049592403066883",
+    "283049630873223171",
+    "283049475214147587",
+    "283049630873157635"
+  ],
+  "auth_time": 1725209174,
+  "client_id": "283049592403066883",
+  "email": "kiwi@example.com",
+  "email_verified": true,
+  "exp": 1725252375,
+  "family_name": "Blue",
+  "gender": "male",
+  "given_name": "Kiwi",
+  "iat": 1725209175,
+  "iss": "http://localhost:8080",
+  "jti": "V2_283053739311366147-at_283053739311431683",
+  "locale": "en",
+  "name": "Kiwi Blue",
+  "nbf": 1725209175,
+  "nickname": "Mr. Kiwi",
+  "preferred_username": "kiwi",
+  "scope": "openid profile email urn:zitadel:iam:org:project:id:283049630873157635:aud urn:zitadel:iam:user:metadata",
+  "sub": "283051912272543747",
+  "token_type": "Bearer",
+  "updated_at": 1725208087,
+  "urn:zitadel:iam:org:project:283049475214147587:roles": {
+    "admin": {
+      "283046760459337731": "zitadel.localhost"
+    }
+  },
+  "urn:zitadel:iam:org:project:roles": {
+    "admin": {
+      "283046760459337731": "zitadel.localhost"
+    }
+  },
+  "urn:zitadel:iam:user:metadata": {
+    "tenant": "em9mdGtvLWxhYg"
+  },
+  "username": "kiwi"
+}
