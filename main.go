@@ -31,7 +31,6 @@ type tokenInfo struct {
 
 type zitadelOpts struct {
 	Host         string `env:"ZITADEL_HOST,required"`
-	ProjectID    string `env:"PROJECT_ID,required"`
 	ClientID     string `env:"CLIENT_ID,required"`
 	ClientSecret string `env:"CLIENT_SECRET,required"`
 	VerifyTenant bool   `env:"VERIFY_TENANT" envDefault:"true"`
@@ -74,17 +73,6 @@ func (z *zitadel) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 func (z *zitadel) validateToken(r *http.Request, info tokenInfo) error {
 	if !info.Active {
 		return errors.New("token is inactive")
-	}
-
-	properAudience := false
-	for _, aud := range info.Audience {
-		if aud == z.opts.ProjectID {
-			properAudience = true
-			break
-		}
-	}
-	if !properAudience {
-		return errors.New("token is missing proper audience")
 	}
 
 	if z.opts.VerifyTenant {

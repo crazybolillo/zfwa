@@ -66,7 +66,6 @@ func TestIntegration(t *testing.T) {
 
 			z := Zitadel(zitadelOpts{
 				Host:         ts.URL,
-				ProjectID:    "283049475214147587",
 				VerifyTenant: true,
 			})
 

@@ -1,6 +1,7 @@
 # Zitadel Forward Auth
 This is a simple HTTP service meant to be used with API Gateways like Traefik to perform Forward Authentication
-using [Zitadel](https://zitadel.com/) as a token provider.
+using [Zitadel](https://zitadel.com/) as a token provider. For more information on how tokens are verified see
+[Zitadel's documentation](https://zitadel.com/docs/guides/solution-scenarios/frontend-calling-backend-API).
 
 ## Usage
 Available as a binary or docker container, it relies solely on environment variables for configuration:
@@ -9,12 +10,6 @@ Available as a binary or docker container, it relies solely on environment varia
 This is the host that will be used to perform
 [token introspection](https://zitadel.com/docs/guides/integrate/token-introspection) requests, for example: 
 `https://accounts.mydomain.com`. If running Zitadel locally it would be something like `http://localhost:8080`.
-
-### `ZITADEL_PROJECT_ID`
-The API project used to introspect tokens. This project relies on the
-[model described by Zitadel](https://zitadel.com/docs/guides/solution-scenarios/frontend-calling-backend-API)
-for frontend projects calling backend apps. Therefore, it will verify that the API project ID is in the token
-scopes.
 
 ### `CLIENT_ID`, `CLIENT_SECRET`
 Basic authentication credentials to authorize to Zitadel and perform token introspection. At the moment
