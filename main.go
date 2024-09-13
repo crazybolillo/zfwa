@@ -150,6 +150,7 @@ func main() {
 	handler := Zitadel(opts)
 	http.Handle("/", handler)
 
+	slog.Info("Starting process", slog.String("addr", listen))
 	err = http.ListenAndServe(listen, nil)
 	if err != nil {
 		slog.Error("Failed to start", slog.String("reason", err.Error()))
