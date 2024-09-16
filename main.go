@@ -113,6 +113,9 @@ func (z *zitadel) introspectToken(token string) (tokenInfo, error) {
 	if err != nil {
 		return tokenInfo{}, err
 	}
+	if res.StatusCode != http.StatusOK {
+		return tokenInfo{}, fmt.Errorf("unexpected HTTP code, got :%d", res.StatusCode)
+	}
 	defer res.Body.Close()
 
 	var info tokenInfo
